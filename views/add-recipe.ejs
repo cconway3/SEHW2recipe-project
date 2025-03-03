@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe</title>
+
+</head>
+
+
+<body>
+
+    <h1>Add a New Recipe</h1>
+
+    <form action="/add-recipe" method="POST">
+
+        <label for="name">Recipe Name:</label>
+        <input type="text" id="name" name="name" required>
+
+
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+
+            <option value="Chicken">Chicken</option>
+            <option value="Beef">Beef</option>
+            <option value="Tofu">Tofu</option>
+            <option value="Grains">Grains</option>
+            <option value="Deer">Deer</option>
+        </select>
+
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+
+
+        <label for="instructions">Instructions:</label>
+        <textarea id="instructions" name="instructions" required></textarea>
+
+
+        <button type="submit">Add Recipe</button>
+
+    </form>
+
+
+    <a href="/">Back to Recipes</a>
+
+    
+    
+    <script>
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.querySelector("form");
+            
+            
+            
+            form.addEventListener("submit", function(event) {
+                
+                const name = document.getElementById("name").value.trim();
+                const description = document.getElementById("description").value.trim();
+                const instructions = document.getElementById("instructions").value.trim();
+                
+                
+                if (name === "" || description === "" || instructions === "") {
+                    
+                    alert("Please fill out all required fields before submitting!");
+                    event.preventDefault(); // Stop form submission
+                
+                }
+            
+            
+            });
+        
+        
+        
+        });
+
+
+    </script>
+
+
+
+</body>
+
+
+
+</html>
